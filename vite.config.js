@@ -5,9 +5,13 @@ import react from '@vitejs/plugin-react'
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
   console.info('Mode:', mode)
+  if (mode === 'development') {
+    console.info('Sandbox URL:', env.SANDBOX)
+  }
   return {
     plugins: [react()],
-    server: { 
+    server: {
+      host: '0.0.0.0',
       port: Number(env.PORT)
     }
   }
