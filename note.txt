@@ -1,0 +1,4 @@
+1. render.com rules
+Source: /*
+Destination: /index.html
+Action: Rewrite
